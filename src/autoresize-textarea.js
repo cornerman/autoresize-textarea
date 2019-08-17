@@ -79,10 +79,10 @@
     // the sum of top padding and bottom padding. But, in older IE, the height  
     // is less than the scrollHeight because the line-height cannot expand
     // the height. So you'd better always set the textarea's height explicitly.
-    var vPadding = parseFloat(curCSS(elem, 'paddingTop')) + 
-                   parseFloat(curCSS(elem, 'paddingBottom'));
+    // var vPadding = parseFloat(curCSS(elem, 'paddingTop')) + 
+    //                parseFloat(curCSS(elem, 'paddingBottom'));
 
-    var offset = elem.scrollHeight - (elem.clientHeight - vPadding);
+    // var offset = elem.scrollHeight - (elem.clientHeight - vPadding);
     elem.value = lastValue;
 
     var scrollListener;
@@ -124,7 +124,7 @@
         elem.style.height = '';
 
         var setHeight = function() {
-          var height = elem.scrollHeight - offset;
+          var height = elem.scrollHeight; // - offset;
 
           // When opts.maxHeight is provided and the height of textarea is 
           // great than opts.maxHeight, the opts.maxHeight will be as the 
